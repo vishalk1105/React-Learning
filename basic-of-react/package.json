@@ -1,0 +1,22 @@
+{
+  "name": "basic-of-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalk1105/React-Learning.git"
+  },
+  "author": "Vishal Kamble",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalk1105/React-Learning/issues"
+  },
+  "homepage": "https://github.com/vishalk1105/React-Learning#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
