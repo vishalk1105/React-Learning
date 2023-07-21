@@ -1,0 +1,86 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+  box-shadow: 10px 10px 6px rgb(231, 224, 224);
+  margin-top: 6px;
+}
+.logo {
+  width: 120px;
+}
+
+.nav_items ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav_items ul li {
+  padding: 0 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.res_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+.res_card {
+  width: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.res_card:hover {
+  transform: scale(0.95, 0.95);
+  transform-origin: center center;
+  transition: all 0.1s ease-in 0s;
+}
+.res_image {
+  border-radius: 30px;
+  width: 100%;
+}
+.res_details {
+  margin-top: 10px;
+}
+
+.res_details h3 {
+  margin: 0;
+  line-height: 1.5;
+  padding-left: 15px;
+}
+.res_name {
+  font-family: "Basis Grotesque Pro";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+}
+.res_rating {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Basis Grotesque Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+}
+.res_menu,
+.res_add {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Basis Grotesque Pro";
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
