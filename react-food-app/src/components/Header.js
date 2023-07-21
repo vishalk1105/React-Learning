@@ -1,10 +1,10 @@
-import logo_image from "../assets/app-logo.png";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="logo_div">
-        <img className="logo" src={logo_image} alt="" />
+        <img className="logo" src={LOGO_URL} alt="" />
       </div>
       <div className="nav_items">
         <ul>
