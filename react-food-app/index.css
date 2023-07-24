@@ -20,7 +20,21 @@
   font-size: 22px;
   cursor: pointer;
 }
-
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+.shimmer_card {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  border-radius: 25px;
+}
 .res_container {
   display: flex;
   flex-wrap: wrap;
@@ -83,4 +97,9 @@
   overflow-wrap: break-word;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.auth_li:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
