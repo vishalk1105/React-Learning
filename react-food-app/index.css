@@ -103,3 +103,6 @@
   cursor: pointer;
   text-decoration: underline;
 }
+.filter {
+  display: flex;
+}
