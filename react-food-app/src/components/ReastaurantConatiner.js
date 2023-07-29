@@ -15,9 +15,6 @@ const ReastaurantConatiner = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
     const jsonData = await data.json();
-    // console.log(
-    //   jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
-    // );
     setResListData(
       jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -59,10 +56,10 @@ const ReastaurantConatiner = () => {
           <button
             onClick={(e) => {
               e.preventDefault();
-              let filteredList = resListData.filter(
+              let filteredList = filteredData.filter(
                 (res) => res.info.avgRating >= 4
               );
-              setResListData(filteredList);
+              setFilteredData(filteredList);
             }}
           >
             Filter By Rating 1
@@ -70,7 +67,7 @@ const ReastaurantConatiner = () => {
         </div>
       </div>
       <div className="res_container">
-        {filteredData.map((data) => (
+        {filteredData?.map((data) => (
           <RestaurantCard key={data.info.id} resData={data.info} />
         ))}
       </div>
