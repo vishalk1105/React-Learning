@@ -4,10 +4,10 @@ const DetailMenu = (item) => {
   const data = item?.data?.card?.card?.itemCards;
   return (
     <>
-      {data.map((i) => {
+      {data?.map((i) => {
         return (
-          <>
-            <div className="detail_menu_container" key={i.card.info.id}>
+          <div key={i.card.info.id}>
+            <div className="detail_menu_container">
               <div className="detail_menu_data">
                 <div></div>
                 <div>
@@ -28,7 +28,7 @@ const DetailMenu = (item) => {
                 <button className="detail_menu_btn">ADD</button>
               </div>
             </div>
-          </>
+          </div>
         );
       })}
     </>

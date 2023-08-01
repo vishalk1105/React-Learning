@@ -3,6 +3,7 @@ import DetailMenu from "./DetailMenu";
 import MenuAccordion from "./MenuAccordion";
 import ResMenuInfo from "./ResMenuInfo";
 import ShimmerUI from "./ShimmerUI";
+import { useParams } from "react-router-dom";
 
 const ReasaurantMenu = () => {
   const [resMenu, setResMenu] = useState([]);
@@ -11,18 +12,19 @@ const ReasaurantMenu = () => {
     fetchMenu();
   }, []);
 
+  const { resId } = useParams();
+  console.log(resId);
   const fetchMenu = async () => {
     const menu = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=24463&catalog_qa=undefined&submitAction=ENTER"
+      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${resId}`
     );
     const json = await menu.json();
     setResMenu(json.data);
   };
 
-  if (resMenu.length === 0 || resMenu === undefined) {
+  if (resMenu?.length === 0 || resMenu === undefined) {
     return <ShimmerUI />;
   }
-
   const {
     name,
     cuisines,
