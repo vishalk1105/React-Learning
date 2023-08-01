@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-
+import { HOTEL_NAME_API } from "../utils/constants.js";
 import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
@@ -12,9 +12,7 @@ const ReastaurantConatiner = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(`${HOTEL_NAME_API}`);
     const jsonData = await data.json();
     setResListData(
       jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle

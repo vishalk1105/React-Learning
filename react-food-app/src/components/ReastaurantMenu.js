@@ -4,7 +4,7 @@ import MenuAccordion from "./MenuAccordion";
 import ResMenuInfo from "./ResMenuInfo";
 import ShimmerUI from "./ShimmerUI";
 import { useParams } from "react-router-dom";
-
+import { MENU_API } from "../utils/constants.js";
 const ReasaurantMenu = () => {
   const [resMenu, setResMenu] = useState([]);
 
@@ -13,11 +13,9 @@ const ReasaurantMenu = () => {
   }, []);
 
   const { resId } = useParams();
-  console.log(resId);
+
   const fetchMenu = async () => {
-    const menu = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${resId}`
-    );
+    const menu = await fetch(`${MENU_API}${resId}`);
     const json = await menu.json();
     setResMenu(json.data);
   };
