@@ -7,9 +7,6 @@ const ReastaurantConatiner = () => {
   const [resListData, setResListData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchText, setSearchText] = useState("");
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const fetchData = async () => {
     const data = await fetch(`${HOTEL_NAME_API}`);
@@ -23,7 +20,9 @@ const ReastaurantConatiner = () => {
         ?.restaurants
     );
   };
-
+  useEffect(() => {
+    fetchData();
+  }, []);
   if (resListData?.length === 0) {
     return <ShimmerUI />;
   }
@@ -69,7 +68,6 @@ const ReastaurantConatiner = () => {
         {filteredData?.map((data) => (
           <Link key={data.info.id} to={`/resturantmenu/${data.info.id}`}>
             <RestaurantCard resData={data.info} />
-            {console.log(data.info.id)}
           </Link>
         ))}
       </div>

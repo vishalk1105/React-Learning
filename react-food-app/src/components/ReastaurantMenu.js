@@ -8,10 +8,6 @@ import { MENU_API } from "../utils/constants.js";
 const ReasaurantMenu = () => {
   const [resMenu, setResMenu] = useState([]);
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
   const { resId } = useParams();
 
   const fetchMenu = async () => {
@@ -19,6 +15,9 @@ const ReasaurantMenu = () => {
     const json = await menu.json();
     setResMenu(json.data);
   };
+  useEffect(() => {
+    fetchMenu();
+  }, []);
 
   if (resMenu?.length === 0 || resMenu === undefined) {
     return <ShimmerUI />;
