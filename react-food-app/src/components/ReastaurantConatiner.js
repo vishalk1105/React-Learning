@@ -11,6 +11,7 @@ const ReastaurantConatiner = () => {
   const fetchData = async () => {
     const data = await fetch(`${HOTEL_NAME_API}`);
     const jsonData = await data.json();
+
     setResListData(
       jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
@@ -20,9 +21,11 @@ const ReastaurantConatiner = () => {
         ?.restaurants
     );
   };
+
   useEffect(() => {
     fetchData();
   }, []);
+
   if (resListData?.length === 0) {
     return <ShimmerUI />;
   }
