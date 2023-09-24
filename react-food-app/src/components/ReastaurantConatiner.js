@@ -39,14 +39,16 @@ const ReastaurantConatiner = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div>
+      <div className="filter flex flex-wrap">
+        <div className="m-2 p-2">
           <input
+            className="border border-solid border-black"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
+            className="px-4 py-1 bg-red-400 m-2 border rounded-lg"
             onClick={(e) => {
               e.preventDefault();
               const filteredres = resListData.filter((res) =>
@@ -60,8 +62,9 @@ const ReastaurantConatiner = () => {
             Search
           </button>
         </div>
-        <div>
+        <div className="flex items-center">
           <button
+            className="px-4 py-1 bg-red-400 m-2 border rounded-lg"
             onClick={(e) => {
               e.preventDefault();
               let filteredList = filteredData.filter(
@@ -70,11 +73,11 @@ const ReastaurantConatiner = () => {
               setFilteredData(filteredList);
             }}
           >
-            Filter By Rating
+            Top Rated Resturants
           </button>
         </div>
       </div>
-      <div className="res_container">
+      <div className="flex flex-wrap gap-4 p-4 align-middle items-center ">
         {filteredData?.map((data) => (
           <Link key={data.info.id} to={`/resturantmenu/${data.info.id}`}>
             <RestaurantCard resData={data.info} />
