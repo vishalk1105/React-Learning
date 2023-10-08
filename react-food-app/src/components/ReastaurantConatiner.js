@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedlable} from "./RestaurantCard";
 import { HOTEL_NAME_API } from "../utils/constants.js";
 import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
@@ -8,6 +8,8 @@ const ReastaurantConatiner = () => {
   const [resListData, setResListData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchText, setSearchText] = useState("");
+  
+  const PromotedResturantCard = withPromotedlable(RestaurantCard);
 
   const fetchData = async () => {
     const data = await fetch(`${HOTEL_NAME_API}`);
@@ -80,7 +82,7 @@ const ReastaurantConatiner = () => {
       <div className="flex flex-wrap gap-4 p-4 align-middle items-center ">
         {filteredData?.map((data) => (
           <Link key={data.info.id} to={`/resturantmenu/${data.info.id}`}>
-            <RestaurantCard resData={data.info} />
+        {data.info.promoted ? (<PromotedResturantCard resData={data.info} / >)  :  (<RestaurantCard resData={data.info} />)}
           </Link>
         ))}
       </div>

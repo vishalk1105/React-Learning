@@ -9,12 +9,23 @@ const RestaurantCard = ({ resData }) => {
       </div>
       <div className="pl-1 pt-2">
         <h3 className="font-bold py-1 text-lg">{name}</h3>
-        <h3 className="res_rating">{avgRating}</h3>
+        <h3 className="res_rating">{avgRating} ⭐</h3>
         <h3 className="res_menu">{cuisines.join(", ")}</h3>
         <h3 className="res_add">{locality}</h3>
       </div>
     </div>
   );
 };
+
+export const withPromotedlable=(RestaurantCard)=>{
+  return (props)=>{
+    return (
+      <div>
+      <label className="absolute bg-black text-white rounded-lg">Promoted</label>
+      <RestaurantCard {...props}/>
+      </div>
+    )
+  }
+}
 
 export default RestaurantCard;

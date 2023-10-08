@@ -1,3 +1,304 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.res_image {
+    border-radius: 30px;
+    width: 100%;
+  }
+  .res_details {
+    margin-top: 10px;
+  }
+  
+  .res_details h3 {
+    margin: 0;
+    line-height: 1.5;
+    padding-left: 15px;
+  }
+  .res_name {
+    font-family: "Basis Grotesque Pro";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+  }
+  .res_rating {
+    -webkit-font-smoothing: antialiased;
+    font-family: "Basis Grotesque Pro";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+  }
+  .res_menu,
+  .res_add {
+    -webkit-font-smoothing: antialiased;
+    font-family: "Basis Grotesque Pro";
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  
+  .auth_li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .filter {
+    display: flex;
+  }
+  .resMenu_container {
+    width: 60%;
+    margin: auto;
+  }
+.resMenu_info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+  }
+  .resMenu_Details {
+    padding-bottom: 25px;
+  }
+  .resMenu_title {
+    font-size: 1.43rem;
+    font-weight: 600;
+    color: #282c3f;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+  }
+  .resMenu_cuisines,
+  .resMenu_locality {
+    font-size: 0.93rem;
+    color: #7e808c;
+  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .resMenu_rating_div {
+    border: 1px solid #e9e9eb;
+    box-shadow: 0 1px 5px #f9f9f9;
+    border-radius: 15px;
+    text-align: center;
+    padding: 8px;
+    max-width: 100px;
+  }
+  .resMenu_rating {
+    color: #3d9b6d;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e9eb;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .resMenu_total_rating {
+    font-size: 11px;
+    color: #8b8d97;
+    font-family: ProximaNovaCondensedRegular, arial, Helvetica Neue, sans-serif;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .dotted_seperator {
+    border: none;
+    border-bottom: 1px dashed #d3d3d3;
+    margin-bottom: 9px;
+  }
+  
+  .resMenu_message {
+    color: #3e4152;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .btn_container {
+    width: 51px;
+    height: 31px;
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  
+  .switch {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #e9e9eb;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+.slider {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    left: calc(50% - 27px / 2 - 10px);
+    top: calc(50% - 27px / 2);
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+  }
+  
+  .checkbox:checked + .switch {
+    background-color: rgb(0, 128, 0);
+  }
+  
+  .checkbox:checked + .switch .slider {
+    left: calc(50% - 27px / 2 + 10px);
+    top: calc(50% - 27px / 2);
+  }
+  .border_bottom_div {
+    border-bottom: 0.5px solid #d3d3d3;
+    height: 0.5px;
+    margin: 24px auto;
+    width: calc(100% - 32px);
+  }
+  
+  /* Accordion */
+  
+  .wrapper {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  .accordion-wrapper {
+    /* & + * { */
+    margin-top: 0.5em;
+    border: solid 1px #ccc;
+    /* } */
+  }
+  
+  .accordion-item {
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+    height: auto;
+    max-height: 9999px;
+  }
+  
+  .accordion-item.collapsed {
+    max-height: 0;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  }
+  
+  .accordion-title {
+    cursor: pointer;
+    padding: 1.1em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #3e4152;
+    font-weight: 800;
+    font-size: 1.3rem;
+  }
+  .accordion-title::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+  }
+  
+  .accordion-title:hover,
+  .accordion-title.open {
+    color: #3e4152;
+  }
+  
+  .accordion-title.open,
+  .accordion-title::after {
+    content: "";
+  }
+  .accordion-content {
+    padding: 1em 1.5em;
+  }
+  .detail_menu_container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.5px solid #d3d3d3;
+    height: 150px;
+  }
+  .detail_menu_title {
+    margin-right: 4px;
+    font-size: 1.22rem;
+    font-weight: 500;
+    color: #3e4152;
+    word-break: break-word;
+  }
+  .detail_menu_price {
+    margin-right: 4px;
+    font-weight: 400;
+    color: #3e4152;
+  }
+  .detail_menu_descr {
+    margin-top: 14px;
+    line-height: 1.3;
+    color: rgba(40, 44, 63, 0.45);
+  
+    letter-spacing: -0.3px;
+    font-size: 1rem;
+  }
+  .detail_menu_data {
+    width: 90%;
+  }
+  .detail_menu_image {
+    width: 118px;
+    height: 96px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 6px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+  .detail_menu_btn {
+    bottom: 8px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-68%);
+    z-index: 1;
+    color: #60b246;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    left: 35%;
+    padding: 8px 18px;
+    box-shadow: 0 3px 8px #e9e9eb;
+    border-radius: 4px;
+    border: 1px solid #d4d5d9;
+    font-weight: 600;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    bottom: -90px;
+    cursor: pointer;
+  }
+  .detail_menu_image_container {
+    position: relative;
+  }
+   a {
+    text-decoration: none;
+  }
