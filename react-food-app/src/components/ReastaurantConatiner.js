@@ -1,14 +1,15 @@
-import RestaurantCard,{withPromotedlable} from "./RestaurantCard";
+import RestaurantCard, { withPromotedlable } from "./RestaurantCard";
 import { HOTEL_NAME_API } from "../utils/constants.js";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const ReastaurantConatiner = () => {
   const [resListData, setResListData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchText, setSearchText] = useState("");
-  
+
   const PromotedResturantCard = withPromotedlable(RestaurantCard);
 
   const fetchData = async () => {
@@ -38,6 +39,8 @@ const ReastaurantConatiner = () => {
   if (resListData?.length === 0) {
     return <ShimmerUI />;
   }
+
+  const { setUserName, logginUser } = useContext(UserContext);
 
   return (
     <div className="body">
@@ -77,12 +80,24 @@ const ReastaurantConatiner = () => {
           >
             Top Rated Resturants
           </button>
+          <div>
+            <label>User Name:</label>
+            <input
+              className="p-2 border border-black"
+              onChange={(e) => setUserName(e.target.value)}
+              value={logginUser}
+            />
+          </div>
         </div>
       </div>
       <div className="flex flex-wrap gap-4 p-4 align-middle items-center ">
         {filteredData?.map((data) => (
           <Link key={data.info.id} to={`/resturantmenu/${data.info.id}`}>
-        {data.info.promoted ? (<PromotedResturantCard resData={data.info} / >)  :  (<RestaurantCard resData={data.info} />)}
+            {data.info.promoted ? (
+              <PromotedResturantCard resData={data.info} />
+            ) : (
+              <RestaurantCard resData={data.info} />
+            )}
           </Link>
         ))}
       </div>

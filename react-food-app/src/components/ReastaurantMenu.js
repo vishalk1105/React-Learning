@@ -3,11 +3,13 @@ import MenuAccordion from "./MenuAccordion";
 import ResMenuInfo from "./ResMenuInfo";
 import ShimmerUI from "./ShimmerUI";
 import useResMenu from "../utils/useResMenu";
-
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 const ReasaurantMenu = () => {
   const { resId } = useParams();
+  const [showIndex, setShowIndex] = useState(0);
+
   const resMenu = useResMenu(resId);
   if (resMenu?.length === 0 || resMenu === undefined) {
     return <ShimmerUI />;
@@ -42,7 +44,16 @@ const ReasaurantMenu = () => {
         item?.card?.card?.title === undefined ? (
           ""
         ) : (
-          <MenuAccordion key={index} title={item?.card?.card?.title}>
+          <MenuAccordion
+            key={index}
+            title={item?.card?.card?.title}
+            number={
+              item?.card?.card?.itemCards?.length ??
+              item?.card?.card?.categories?.length
+            }
+            isOpen={index === showIndex ? true : false}
+            setShowIndex={() => setShowIndex(index)}
+          >
             <DetailMenu data={item} />
           </MenuAccordion>
         )

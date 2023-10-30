@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const RestaurantCard = ({ resData }) => {
   const { name, avgRating, cuisines, locality, cloudinaryImageId } = resData;
+  const { logginUser } = useContext(UserContext);
   return (
     <div className="pb-3 m-2 w-[300px] rounded-xl shadow-xl hover:scale-105 duration-300">
       <div className="res_img_div">
@@ -12,20 +15,23 @@ const RestaurantCard = ({ resData }) => {
         <h3 className="res_rating">{avgRating} ⭐</h3>
         <h3 className="res_menu">{cuisines.join(", ")}</h3>
         <h3 className="res_add">{locality}</h3>
+        <h3>{logginUser}</h3>
       </div>
     </div>
   );
 };
 
-export const withPromotedlable=(RestaurantCard)=>{
-  return (props)=>{
+export const withPromotedlable = (RestaurantCard) => {
+  return (props) => {
     return (
       <div>
-      <label className="absolute bg-black text-white rounded-lg">Promoted</label>
-      <RestaurantCard {...props}/>
+        <label className="absolute bg-black text-white rounded-lg">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default RestaurantCard;

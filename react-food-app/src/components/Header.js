@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [auth, setAuth] = useState(true);
   const onlineStatus = useOnlineStatus();
-
+  const { logginUser } = useContext(UserContext);
   return (
     <div className="flex justify-between  bg-red-100 shadow-lg mb-3 flex-wrap ">
       <div className="logo_div">
@@ -36,6 +37,7 @@ const Header = () => {
           >
             {auth ? `LogIn` : `LogOut`}
           </li>
+          <li>{logginUser}</li>
         </ul>
       </div>
     </div>

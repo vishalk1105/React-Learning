@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client.js";
 import Header from "./components/Header";
 import ReastaurantConatiner from "./components/ReastaurantConatiner";
@@ -7,13 +7,24 @@ import Error from "./components/Error";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ReasaurantMenu from "./components/ReastaurantMenu";
+import UserContext from "./utils/UserContext";
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    const data = {
+      name: "Vishal Kamble",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="root">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ logginUser: userName, setUserName }}>
+      <div className="root">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

@@ -1,14 +1,14 @@
-import { useState } from "react";
-
-const MenuAccordion = ({ title, children }) => {
-  const [isOpen, setOpen] = useState(false);
+const MenuAccordion = ({ title, children, number, isOpen, setShowIndex }) => {
+  const openAccordion = () => {
+    setShowIndex();
+  };
   return (
     <div className="accordion-wrapper">
       <div
         className={`accordion-title ${isOpen ? "open" : ""}`}
-        onClick={() => setOpen(!isOpen)}
+        onClick={openAccordion}
       >
-        {title}
+        {title} ({number})
       </div>
       <div className={`accordion-item ${!isOpen ? "collapsed" : ""}`}>
         <div className="accordion-content">{children}</div>
