@@ -1,8 +1,16 @@
+import { useDispatch } from "react-redux";
 import { MENU_ITEM_API } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
 const DetailMenu = (item) => {
+  const dispatch = useDispatch();
   const data =
     item?.data?.card?.card?.itemCards ?? item?.data?.card?.card?.categories;
+
+  const handleAddClick = (itemData) => {
+    dispatch(addItem(itemData));
+  };
+
   return (
     <>
       {data?.map((i) => {
@@ -26,7 +34,12 @@ const DetailMenu = (item) => {
                   className="detail_menu_image"
                   src={`${MENU_ITEM_API}${i?.card?.info?.imageId}`}
                 />
-                <button className="detail_menu_btn">ADD+</button>
+                <button
+                  className="detail_menu_btn"
+                  onClick={() => handleAddClick(i?.card?.info)}
+                >
+                  ADD+
+                </button>
               </div>
             </div>
           </div>
