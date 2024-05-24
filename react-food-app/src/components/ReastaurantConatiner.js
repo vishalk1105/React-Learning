@@ -28,7 +28,7 @@ const ReastaurantConatiner = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(resListData, "filter data");
+
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) {
@@ -79,7 +79,7 @@ const ReastaurantConatiner = () => {
             Top Rated Resturants
           </button>
           <div>
-            <label>User Name:</label>
+            <label>User Name: </label>
             <input
               className="p-2 border border-black"
               onChange={(e) => setUserName(e.target.value)}
