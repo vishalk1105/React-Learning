@@ -2,23 +2,20 @@ import { useDispatch } from "react-redux";
 import { CDN_URL, MENU_ITEM_API } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
-const DetailMenu = (item) => {
+const DetailMenu = ({ data, ukey }) => {
   const dispatch = useDispatch();
-  const data =
-    item?.data?.card?.card?.itemCards ?? item?.data?.card?.card?.categories;
 
   const handleAddClick = (itemData) => {
     dispatch(addItem(itemData));
   };
 
   return (
-    <>
+    <div key={ukey}>
       {data?.map((i) => {
         return (
           <div key={i?.card?.info?.id}>
             <div className="detail_menu_container">
               <div className="detail_menu_data">
-                <div></div>
                 <div>
                   <h3 className="detail_menu_title">{i?.card?.info?.name}</h3>
                 </div>
@@ -33,6 +30,7 @@ const DetailMenu = (item) => {
                 <img
                   className="detail_menu_image"
                   src={`${CDN_URL}${i?.card?.info?.imageId}`}
+                  alt=""
                 />
                 <button
                   className="detail_menu_btn"
@@ -45,7 +43,7 @@ const DetailMenu = (item) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

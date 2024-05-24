@@ -1,4 +1,5 @@
 {
+   "homepage": "https://github.com/vishalk1105/React-Learning#readme",
   "name": "basic-of-react",
   "version": "1.0.0",
   "description": "",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/vishalk1105/React-Learning/issues"
   },
-  "homepage": "https://github.com/vishalk1105/React-Learning#readme",
+
   "devDependencies": {
     "parcel": "^2.9.3",
     "postcss": "^8.4.30",

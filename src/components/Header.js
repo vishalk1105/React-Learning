@@ -32,7 +32,7 @@ const Header = () => {
           </li>
           <li className="px-2">
             {" "}
-            <Link to={"/cart"}>Cart</Link> ({cartItems.length} items)
+            <Link to={"/cart"}>Cart</Link> <sup>{cartItems.length}</sup>
           </li>
           <li
             className="px-2"

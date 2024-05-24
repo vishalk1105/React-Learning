@@ -27,8 +27,7 @@ const ReasaurantMenu = () => {
 
   const itemsCard =
     resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-  const itemsCard1 = resMenu;
-  console.log(itemsCard1, "item card");
+
   return (
     <div className="resMenu_container">
       <ResMenuInfo
@@ -55,7 +54,7 @@ const ReasaurantMenu = () => {
             isOpen={index === showIndex ? true : false}
             setShowIndex={() => setShowIndex(index)}
           >
-            <DetailMenu data={item} />
+            <DetailMenu ukey={index} data={item.card?.card?.itemCards} />
           </MenuAccordion>
         )
       )}
