@@ -1,10 +1,8 @@
 const ResMenuInfo = ({
   name,
-  city,
   cuisines,
   locality,
   costForTwoMessage,
-  cloudinaryImageId,
   avgRating,
   totalRatingsString,
 }) => {

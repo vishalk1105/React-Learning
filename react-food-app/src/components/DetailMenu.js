@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { MENU_ITEM_API } from "../utils/constants";
+import { CDN_URL, MENU_ITEM_API } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
 const DetailMenu = (item) => {
@@ -32,7 +32,7 @@ const DetailMenu = (item) => {
               <div className="detail_menu_image_container">
                 <img
                   className="detail_menu_image"
-                  src={`${MENU_ITEM_API}${i?.card?.info?.imageId}`}
+                  src={`${CDN_URL}${i?.card?.info?.imageId}`}
                 />
                 <button
                   className="detail_menu_btn"

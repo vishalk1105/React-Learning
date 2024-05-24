@@ -23,11 +23,12 @@ const ReasaurantMenu = () => {
     cloudinaryImageId,
     avgRating,
     totalRatingsString,
-  } = resMenu?.cards[0]?.card?.card?.info;
+  } = resMenu?.cards[2]?.card?.card?.info;
 
   const itemsCard =
-    resMenu?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-
+    resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  const itemsCard1 = resMenu;
+  console.log(itemsCard1, "item card");
   return (
     <div className="resMenu_container">
       <ResMenuInfo

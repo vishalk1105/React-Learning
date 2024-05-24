@@ -302,3 +302,12 @@
 a {
   text-decoration: none;
 }
+.card_lists_body {
+  display: flex;
+  justify-content: center;
+}
+
+.food_img {
+  height: 245px;
+  width: 300px;
+}
