@@ -31,8 +31,13 @@ const Header = () => {
             <Link to={"/grocery"}>Grocery</Link>
           </li>
           <li className="px-2">
-            {" "}
-            <Link to={"/cart"}>Cart</Link> <sup>{cartItems.length}</sup>
+            <Link className="flex" to={"/cart"}>
+              <img
+                src="https://img.icons8.com/?size=30&id=8chNl15hy6jY&format=png&color=000000"
+                alt=""
+              />
+              <sup>{cartItems.length}</sup>
+            </Link>
           </li>
           <li
             className="px-2"

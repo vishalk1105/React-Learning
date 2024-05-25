@@ -65,7 +65,7 @@ const ReastaurantConatiner = () => {
           </button>
         </div>
 
-        <div className="flex items-center">
+        <div className="flex  items-center">
           <button
             className="px-4 py-1 bg-red-400 m-2 border rounded-lg"
             onClick={(e) => {
@@ -89,7 +89,7 @@ const ReastaurantConatiner = () => {
         </div>
       </div>
       <div className="card_lists_body">
-        <div className="container flex flex-wrap gap-5 p-4 align-middle items-center ">
+        <div className="container justify-center flex flex-wrap gap-5 p-4 align-middle items-center ">
           {filteredData?.map((data) => (
             <Link
               className="card_link"
