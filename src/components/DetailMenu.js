@@ -32,7 +32,6 @@ const DetailMenu = ({ data, ukey, cartItem }) => {
                   src={`${CDN_URL}${i?.card?.info?.imageId}`}
                   alt=""
                 />
-
                 <button
                   className="detail_menu_btn"
                   onClick={() => handleAddClick(i)}
